@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>template</title>
+
+</head>
+
+<body>
+    <div id="root">
+    </div>
+    <script type="text/javascript" src="react.js"></script>
+    <script type="text/javascript" src="react-dom.js"></script>
+    <script src="babel.min.js"></script>
+    <script type="text/babel">
+
+        class HelloWorldComponent extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = { count : 1};
+            }
+
+            getApplicationHeading = function(){
+                return('Application Heading');
+            }     
+            render(){ 
+                var myStyle = {
+                    color:'red'
+                }
+
+                return (
+                    <div>
+                    <h1 style={myStyle}>{this.getApplicationHeading()}</h1>
+                   <h1> {this.state.count === 0 ? 'No one visited the site' :
+                 this.props.msg + ' People has started visiting the site'} </h1>
+                 </div>)
+            } 
+        } 
+        
+       ReactDOM.render(<HelloWorldComponent msg='Congratulations'/>, document.getElementById('root'));
+
+    </script>
+</body>
+
+</html>

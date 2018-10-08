@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>template</title>
+
+</head>
+
+<body>
+    <div id="root">
+    </div>
+    <script type="text/javascript" src="react.js"></script>
+    <script type="text/javascript" src="react-dom.js"></script>
+    <script src="babel.min.js"></script>
+    <script type="text/babel">
+
+        class HelloComponent extends React.Component{ 
+            render(){ 
+                return (<div>Hello</div>)
+            } 
+        } 
+        
+        class WorldComponent extends React.Component{ 
+            render(){ 
+                return (<div><HelloComponent/> world</div>)
+            } 
+        } 
+        
+        class HelloWorldComponent extends React.Component{ 
+            render(){ 
+                return (<h1><WorldComponent/>using component</h1>)
+            } 
+        } 
+        
+       ReactDOM.render(<HelloWorldComponent/>, document.getElementById('root'));
+
+    </script>
+</body>
+
+</html>
